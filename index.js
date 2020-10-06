@@ -3,13 +3,13 @@
  */
 const config = {
   title: "96596导航网 | 96596.net",                 //write your website title
-  subtitle: "您正在访问的域名可以转让出售 | This Domain Name is for SALE!", //write your website subtitle
-  logo_icon: "rocket",               //select your logo by semantic-ui icon (you can get more msg in:https://semantic-ui.com/elements/icon.html)
+  subtitle: "您正在访问的域名可以转让出售 | This Domain-Name is for SALE now!", //write your website subtitle
+  logo_icon: "cart arrow down",               //select your logo by semantic-ui icon (you can get more msg in:https://semantic-ui.com/elements/icon.html)
   hitokoto: true,                     //use hitokoto or not
   search:true,                        //enable search function
   search_engine:[                     //choose search engine which you use
     {
-      name:"百 度",
+      name:"Baidu",
       template:"https://www.baidu.com/s?wd=$s"
     },
     {
@@ -17,19 +17,19 @@ const config = {
       template:"https://www.google.com/search?q=$s"
     },
     {
-      name:"必 应",
+      name:"Bing",
       template:"https://www.bing.com/search?q=$s"
     },   
   ],
   selling_ads: true,                  //Selling your domain or not.(turning on may be helpful for selling this domain by showing some ads.)
   sell_info:{
     domain:"96596.net",
-    price:9659.60,                        //domain price
+    price:9999,                        //domain price
     mon_unit:"yen sign",              //monetary unit 
     contact:[                         //how to contact you
       {
         type:"envelope",               //contact type ("weixin","qq","telegram plane","envelope" or "phone")
-        content:"Shellyxinzzz@hotmail.com"
+        content:"vinson@88.com"
       }
     ]                        
   },
@@ -57,10 +57,10 @@ addEventListener('fetch', event => {
 function getFavicon(url){
   if(url.match(/https{0,1}:\/\//)){
     //return "https://ui-avatars.com/api/?bold=true&size=36&background=0D8ABC&color=fff&rounded=true&name=" + url.split('//')[1];
-    return "https://icon.occ.hk/get.php?url=" + url;
+    return "https://www.google.cn/s2/favicons?sz=64&domain_url=" + url;
   }else{
     //return "https://ui-avatars.com/api/?bold=true&size=36&background=0D8ABC&color=fff&rounded=true&name=" + url;
-    return "https://icon.occ.hk/get.php?url=http://" + url;
+    return "https://www.google.cn/s2/favicons?sz=64&domain_url=http://" + url;
   } 
 }
 
@@ -69,7 +69,7 @@ function getFavicon(url){
  */
 
 function renderIndex(){
-  const footer = el('footer',[],el('div',['class="footer"'],'Powered by' + el('a',['class="ui label"','href="https://github.com/sleepwood/cf-worker-dir"','target="_blank"'],el('i',['class="github icon"'],"") + 'Cf-Worker-Dir') + ' &copy; Base on ' + el('a',['class="ui label"'],el('i',['class="balance scale icon"'],"") + 'MIT License')));
+  const footer = el('footer',[],el('div',['class="footer"'],'Powered by' + el('a',['class="ui label"','href="https://github.com/LoveSoGood/Cloudflare-Worker-Domain-Sale"','target="_blank"'],el('i',['class="github icon"'],"") + 'Cf-Worker-Dir') + ' &copy; Base on ' + el('a',['class="ui label"'],el('i',['class="balance scale icon"'],"") + 'MIT License')));
   return renderHeader() + renderMain() + footer;
 }
 
@@ -86,7 +86,7 @@ function renderHeader(){
     }
   }).join(""))
   var input = el('div',['class="ui left corner labeled right icon fluid large input"'],el('div',['class="ui left corner label"'],el('img',['id="search-fav"','class="left floated avatar ui image"','src="https://www.baidu.com/favicon.ico"'],"")) + el('input',['id="searchinput"','type="search"','placeholder="搜索你想要知道的……"','autocomplete="off"'],"") + el('i',['class="inverted circular search link icon"'],""));
-  return el('header',[],el('div',['id="head"','class="ui inverted vertical masthead center aligned segment"'],(config.hitokoto ? el('div',['id="nav"','class="ui container"'],nav) : "") + el('div',['id="title"','class="ui text container"'],title + (config.search ? input + menu :"") + `${config.selling_ads ? '<div><a id="menubtn" class="red ui icon inverted button"><i class="heart icon"></i> 购买此域名 | Buy This Domain「96596.net」 </a></div>' : ''}`)))
+  return el('header',[],el('div',['id="head"','class="ui inverted vertical masthead center aligned segment"'],(config.hitokoto ? el('div',['id="nav"','class="ui container"'],nav) : "") + el('div',['id="title"','class="ui text container"'],title + (config.search ? input + menu :"") + `${config.selling_ads ? '<div><a id="menubtn" class="red ui icon inverted button"><i class="heart icon"></i> 喜欢此域名 </a></div>' : ''}`)))
 }
 
 function renderMain() {
@@ -106,15 +106,15 @@ function renderMain() {
 
 function renderSeller() {
   const item = (type,content) => el('div',['class="item"'],el('i',[`class="${type} icon"`],"") + el('div',['class="content"'],content));
-  var title = el('h1',['class="ui yellow dividing header"'],el('i',['class="gem outline icon"'],"") + el('div',['class="content"'],config.sell_info.domain + ' 正在出售 | This Domain Name is for SALE'));
+  var title = el('h1',['class="ui yellow dividing header"'],el('i',['class="gem outline icon"'],"") + el('div',['class="content"'],config.sell_info.domain + ' 正在出售'));
   var action = el('div',['class="actions"'],el('div',['class="ui basic cancel inverted button"'],el('i',['class="reply icon"'],"") + '返回'));
 
   var contact = config.sell_info.contact.map((list) => {
     return item(list.type,list.content);
   }).join("");
-  var column = el('div',['class="column"'],el('h3',['class="ui center aligned icon inverted header"'],el('i',['class="circular envelope open outline grey inverted icon"'],"") + '联系我 | Contact') + el('div',['class="ui relaxed celled large list"'],contact));
+  var column = el('div',['class="column"'],el('h3',['class="ui center aligned icon inverted header"'],el('i',['class="circular envelope open outline grey inverted icon"'],"") + '联系我') + el('div',['class="ui relaxed celled large list"'],contact));
   var price = el('div',['class="column"'],el('div',['class="ui large yellow statistic"'],el('div',['class="value"'],el('i',[`class="${config.sell_info.mon_unit} icon"`],"") + config.sell_info.price)));
-  var content = el('div',['class="content"'],el('div',['class="ui basic segment"'],el('div',['class="ui two column stackable center aligned grid"'],el('div',['class="ui inverted vertical divider"'],'感兴趣？| Wanna buy?') + el('div',['class="middle aligned row"'],price + column))));
+  var content = el('div',['class="content"'],el('div',['class="ui basic segment"'],el('div',['class="ui two column stackable center aligned grid"'],el('div',['class="ui inverted vertical divider"'],'感兴趣？') + el('div',['class="middle aligned row"'],price + column))));
 
   return el('div',['id="seller"','class="ui basic modal"'],title + content + action);
 }
