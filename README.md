@@ -52,5 +52,7 @@ const config = {
 MIT
 
 ## 由衷感谢
-@sleepwood
+
+特别感谢@sleepwood
+
 代码修改自 https://github.com/sleepwood/CF-Worker-Dir
