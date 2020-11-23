@@ -1,6 +1,6 @@
 # Cloudflare-Worker-Domain-Sale
 
-Cloudflare-Worker-Domain-Sale是一款适用于Cloudflare-Worker平台上的云函数程序，可以使用它瞬间搭建属于自己的域名停放页面，提供丰富的自定义配置，帮助您尽快售出自己域名。
+Cloudflare-Worker-Domain-Sale是一款基于Cloudflare-Worker平台上的云函数程序，可以使用它瞬间搭建属于自己的域名停放页面，提供丰富的自定义配置，帮助您尽快售出自己域名。
 
 🎉[演示地址](https://96596.net)
 
@@ -25,7 +25,7 @@ const config = {
   title: "自定义导航",                 //自定义网站标题
   subtitle: "Cloudflare Workers Nav", //自定义网站副标题
   logo_icon: "sitemap",               //选择网站logo icon 暂时只支持 (eg:https://semantic-ui.com/elements/icon.html)
-  hitokoto: true,                     //开启 一言 插件
+  hitokoto: true,                     //开启 格言 插件
   search:true,                        //开启 搜索 功能  
   search_engine:[                     //搜索引擎列表
     {
