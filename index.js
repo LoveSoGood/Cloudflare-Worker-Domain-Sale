@@ -6,7 +6,7 @@ const config = {
   subtitle: "您正在访问的域名可以转让出售 | This Domain-Name is for SALE now!", //write your website subtitle
   logo_icon: "cart arrow down",               //select your logo by semantic-ui icon (you can get more msg in:https://semantic-ui.com/elements/icon.html)
   hitokoto: false,                     //use hitokoto or not
-  search:true,                        //enable search function
+  search:false,                        //enable search function
   search_engine:[                     //choose search engine which you use
     {
       name:"Baidu",
